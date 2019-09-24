@@ -7,6 +7,9 @@ import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
 
+import axios from 'axios';
+window.axios = axios;
+
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
@@ -15,5 +18,3 @@ ReactDOM.render(
   </Provider>,
   document.querySelector('#root')
 );
-
-
